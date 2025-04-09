@@ -17,7 +17,16 @@ export default defineType({
 			name: 'body',
 			type: 'array',
 			of: [
-				{ type: 'block' },
+				{
+					type: 'block',
+					marks: {
+						decorators: [
+							{ title: 'Strong', value: 'strong' },
+							{ title: 'Emphasis', value: 'em' },
+							{ title: 'Superscript', value: 'sup' },
+						],
+					},
+				},
 				imageBlock,
 				admonition,
 				defineArrayMember({

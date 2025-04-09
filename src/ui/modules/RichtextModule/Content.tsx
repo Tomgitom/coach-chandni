@@ -8,10 +8,10 @@ import Admonition from './Admonition'
 import CustomHTML from '@/ui/modules/CustomHTML'
 
 export default function Content({
-	value,
-	className,
-	children,
-}: { value: any } & React.ComponentProps<'div'>) {
+																	value,
+																	className,
+																	children,
+																}: { value: any } & React.ComponentProps<'div'>) {
 	return (
 		<div
 			className={cn(
@@ -28,6 +28,9 @@ export default function Content({
 						h4: (node) => <AnchoredHeading as="h4" {...node} />,
 						h5: (node) => <AnchoredHeading as="h5" {...node} />,
 						h6: (node) => <AnchoredHeading as="h6" {...node} />,
+					},
+					marks: {
+						sup: ({ children }) => <sup>{children}</sup>, // ✅ Superscript rendering
 					},
 					types: {
 						image: Image,

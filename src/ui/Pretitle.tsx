@@ -8,7 +8,7 @@ export default function Pretitle({
 	if (!children) return null
 
 	return (
-		<p className={cn('technical text-ink/65', className)}>
+		<p className={cn('text-neutral-800 text-2xl', className)}>
 			{stegaClean(children)}
 		</p>
 	)
