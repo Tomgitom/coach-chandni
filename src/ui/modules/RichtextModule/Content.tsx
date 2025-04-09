@@ -15,7 +15,7 @@ export default function Content({
 	return (
 		<div
 			className={cn(
-				'richtext mx-auto w-full space-y-6 [&>:first-child]:!mt-0',
+				'richtext mx-auto w-full max-w-prose px-4 space-y-6 break-words [&_a]:break-all [&>:first-child]:!mt-0',
 				className,
 			)}
 		>
@@ -30,7 +30,7 @@ export default function Content({
 						h6: (node) => <AnchoredHeading as="h6" {...node} />,
 					},
 					marks: {
-						sup: ({ children }) => <sup>{children}</sup>, // ✅ Superscript rendering
+						sup: ({ children }) => <sup>{children}</sup>,
 					},
 					types: {
 						image: Image,
